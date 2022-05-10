@@ -31,7 +31,7 @@ contract DynamicSvgNft is ERC721, Ownable {
         Counter = Counter + 1;
     }
     function svgToImageURI(string memory svg) public pure returns (string memory) {
-        string memory baseURL = "data:image/svg+xml;base64,";
+        string memory baseURL = "data:image/jpg;base64,";
         string memory svgBase64Encoded = Base64.encode(bytes(string(abi.encodePacked(svg))));
         return string(abi.encodePacked(baseURL, svgBase64Encoded));
     }
@@ -52,8 +52,8 @@ contract DynamicSvgNft is ERC721, Ownable {
                         bytes(
                             abi.encodePacked(
                                 '{"name":"',
-                                name(), // You can add whatever name here
-                                '", "description":"An NFT that changes based on the Chainlink Feed", ',
+                                "lucrative nft", 
+                                '", "description":"An NFT that is automatically generated from website images", ',
                                 '"attributes": [{"trait_type": "coolness", "value": 100}], "image":"',
                                 imageURI,
                                 '"}'
