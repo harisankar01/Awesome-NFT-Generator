@@ -17,8 +17,8 @@ contract DynamicSvgNft is ERC721, Ownable {
 
     constructor(
         address priceFeedAddress,
-        string memory first_Img,
-    ) ERC721("Dynamic SVG NFT", "DSN") {
+        string memory first_Img
+    ) ERC721("Lucrative NFT", "LcN") {
         Counter = 0;
         priceFeed = AggregatorV3Interface(priceFeedAddress);
         Img = svgToImageURI(first_Img);

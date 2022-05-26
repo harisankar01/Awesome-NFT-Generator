@@ -2,8 +2,8 @@ const { network } = require("hardhat")
 
 module.exports= async function(hre){
 
-    const {getAccounts,deplyments}=hre
-    const {deploy,log}=deplyments
+    const {getAccounts,deployments}=hre
+    const {deploy,log}=deployments
     const {deployer}=await getAccounts()
     const chainid=  network.config.chainId
     const { DECIMALS, INITIAL_PRICE } = require("../helper")

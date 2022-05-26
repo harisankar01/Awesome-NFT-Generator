@@ -34,7 +34,7 @@ module.exports = {
                 version: "0.8.8",
             },
             {
-                version: "0.6.6", //for mocks
+                version: "0.6.6", 
             },
         ],
     },
@@ -47,7 +47,7 @@ module.exports = {
         outputFile: "gas-report.txt",
         noColors: true,
     },
-    Accounts: {
+    namedAccounts: {
         deployer: {
             default: 0, 
             1: 0, 
