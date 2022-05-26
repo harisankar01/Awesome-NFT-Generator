@@ -21,7 +21,7 @@ contract DynamicSvgNft is ERC721, Ownable {
     ) ERC721("Lucrative NFT", "LcN") {
         Counter = 0;
         priceFeed = AggregatorV3Interface(priceFeedAddress);
-        Img = svgToImageURI(first_Img);
+        Img = JPEGToImageURI(first_Img);
     }
 
     function mintNft(int256 highValue) public {
@@ -30,8 +30,8 @@ contract DynamicSvgNft is ERC721, Ownable {
         _safeMint(msg.sender, Counter);
         Counter = Counter + 1;
     }
-    function svgToImageURI(string memory svg) public pure returns (string memory) {
-        string memory baseURL = "data:image/jpg;base64,";
+    function JPEGToImageURI(string memory svg) public pure returns (string memory) {
+        string memory baseURL = "data:image/jpeg;base64,";
         string memory svgBase64Encoded = Base64.encode(bytes(string(abi.encodePacked(svg))));
         return string(abi.encodePacked(baseURL, svgBase64Encoded));
     }
@@ -72,7 +72,4 @@ contract DynamicSvgNft is ERC721, Ownable {
         return priceFeed;
     }
 
-    function getTokenCounter() public view returns (uint256) {
-        return Counter;
-    }
 }
